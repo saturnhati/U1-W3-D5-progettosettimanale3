@@ -1,35 +1,55 @@
 let newOp;
+let symbol;
+let last;
 
 function writeToOutput(element) {
-  if (element == '*' || element == '/' || element == '+' || element == '-'){
-    newOp = false
-  }
-  
-  if (newOp == true) {
-    document.getElementById('output').innerHTML = ''
-    document.getElementById('output').innerHTML += element
-    newOp = false
+
+  last = document.getElementById('output').innerHTML.charAt(document.getElementById('output').innerHTML.length - 1);
+
+  if ( last !== '*' && last !== '/' && last !== '+' && last !== '-' ) {
+    if (element == '*' || element == '/' || element == '+' || element == '-'){
+      newOp = false
+    }
+        
+    if (newOp == true) {
+      document.getElementById('output').innerHTML = ''
+      document.getElementById('output').innerHTML += element
+      newOp = false
+    }
+    else {
+      document.getElementById('output').innerHTML += element
+    }
   }
   else {
-    document.getElementById('output').innerHTML += element
+    document.getElementById('output').innerHTML += ''
+    console.log('errore')
   }
+
 }
   
-  function showResults() {
+
+
+
+  
+function showResults() {
     newOp = true;
+    symbol = false;
     let result = eval(document.getElementById('output').innerHTML)
     console.log(result)
     console.log(typeof result)
     
 
-    if (isNaN(result) == true) {
+  if (isNaN(result) == true) {
       document.getElementById('output').innerHTML = 'ERROR'
-    }
-    else {
+   }
+   else {
       document.getElementById('output').innerHTML = result
-    }
   }
+}
   
-  function deleteOutput() {
-    document.getElementById('output').innerHTML = '' 
-  }
+function deleteOutput() {
+  document.getElementById('output').innerHTML = '' 
+}
+
+document.getElementById('output').innerHTML
+
