@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+  }
+
+body {
+    margin: 0;
+} 
+
+.calculator {
+    margin: 4vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 274px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+button {
+    flex: 1 0 60px;
+    border: none;
+    background-color: rgb(118, 160, 149);
+    color: white;
+    border: 1px solid rgb(141, 187, 175);
+    font-size: 1.8rem;
+}
+
+.button-color {
+    background-color: rgb(146, 213, 195);
+}
+
+button:nth-of-type(1) {
+    flex-basis: 197px;
+}
+
+button:nth-of-type(16) {
+    flex-basis: 197px;
+}
+
+
+#output {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    font-size: 1.8rem;
+    height: 56px;
+}
