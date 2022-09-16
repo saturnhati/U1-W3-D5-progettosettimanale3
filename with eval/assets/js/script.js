@@ -9,7 +9,6 @@ function writeToOutput(element) {
     document.getElementById('output').innerHTML = ''
     document.getElementById('output').innerHTML += element
     newOp = false
-    console.log('ciao')
   }
   else {
     document.getElementById('output').innerHTML += element
