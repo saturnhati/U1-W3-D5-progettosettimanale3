@@ -1,25 +1,29 @@
 let newOp;
 
 function writeToOutput(element) {
-    newOp = false;
-    document.getElementById('output').innerHTML += element
-  
-    // Altri modi per fare la STESSA IDENTICA COSA:
-    // Primo modo:
-    // document.getElementById('display').value = document.getElementById('display').value + stringa
-  
-    // Secondo modo:
-    // let display = document.getElementById('display')
-    // display = display + stringa
+  if (element == '*' || element == '/' || element == '+' || element == '-'){
+    newOp = false
   }
+  
+  if (newOp == true) {
+    document.getElementById('output').innerHTML = ''
+    document.getElementById('output').innerHTML += element
+    newOp = false
+    console.log('ciao')
+  }
+  else {
+    document.getElementById('output').innerHTML += element
+  }
+}
   
   function showResults() {
     newOp = true;
     let result = eval(document.getElementById('output').innerHTML)
     console.log(result)
     console.log(typeof result)
-  
-    if (Number.isNaN(result) == true) {
+    
+
+    if (isNaN(result) == true) {
       document.getElementById('output').innerHTML = 'ERROR'
     }
     else {
@@ -28,5 +32,5 @@ function writeToOutput(element) {
   }
   
   function deleteOutput() {
-    document.getElementById('output').innerHTML = '' // Stringa vuota
+    document.getElementById('output').innerHTML = '' 
   }
